@@ -1,7 +1,18 @@
-import Message from './Message'
+import ListGroup from "./ListGroup/ListGroup";
 
-function App() {
-  return <div><Message/></div>
+export default function App() {
+  let items = ["hello", "goodbye", "hibye", "nocry"];
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+
+  return (
+    <div>
+      <ListGroup
+        items={items}
+        heading="Yolo swag"
+        onSelectItem={handleSelectItem}
+      />
+    </div>
+  );
 }
-
-export default App
