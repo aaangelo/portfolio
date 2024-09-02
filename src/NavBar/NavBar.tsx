@@ -1,27 +1,21 @@
 import { useState } from "react";
-import "./ListGroup.css";
+import "./NavBar.css";
 
-interface ListGroupProps {
-  items: string[];
-  heading: string;
+interface NavBarProps {
   onSelectItem: (item: string) => void;
 }
 
-export default function ListGroup({
-  items,
-  heading,
-  onSelectItem,
-}: ListGroupProps) {
+export default function NavBar({ onSelectItem }: NavBarProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  let items = ["hello", "goodbye", "hibye", "nocry"];
 
   return (
-    <>
-      <h1>{heading}</h1>
+    <div className="div">
       {items.length === 0 && <p>no items found</p>}
-      <ul>
+      <ul className="list">
         {items.map((item, index) => (
           <li
-            className={selectedIndex === index ? "active" : ""}
+            className={selectedIndex === index ? "listItem active" : "listItem"}
             key={item}
             onClick={() => {
               setSelectedIndex(index);
@@ -32,6 +26,6 @@ export default function ListGroup({
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import ListGroup from "./ListGroup/ListGroup";
+import NavBar from "./NavBar/NavBar";
 
 export default function App() {
   let items = ["hello", "goodbye", "hibye", "nocry"];
@@ -8,11 +8,8 @@ export default function App() {
 
   return (
     <div>
-      <ListGroup
-        items={items}
-        heading="Yolo swag"
-        onSelectItem={handleSelectItem}
-      />
+      <h1>this is where the heading will go</h1>
+      <NavBar items={items} onSelectItem={handleSelectItem} />
     </div>
   );
 }
